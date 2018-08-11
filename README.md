@@ -16,6 +16,7 @@ Please visit the organizer's website (http://stacom2018.cardiacatlas.org/) for t
 
 * GPU with Kepler generation of architecture or above
 * GPU memory 3GB or above
+* RAM 32GB
 
 ### Installing
 
