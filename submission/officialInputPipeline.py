@@ -4,7 +4,6 @@ import os
 
 import matplotlib
 matplotlib.use('agg')
-#import matplotlib.pyplot as plt
 matplotlib.rcParams['font.size'] = 8
 
 def trim(x):
@@ -45,22 +44,24 @@ def getFilePaths():
                 print ('%s is unknown' %name)
     return mask_paths, image_paths
     
-# this function loads .nrrd files into a 3D matrix and outputs it
-# 	the input is the specified file path to the .nrrd file
+
 def load_nrrd(full_path_filename):
-
-	data = sitk.ReadImage( full_path_filename )
-	data = sitk.Cast( sitk.RescaleIntensity(data), sitk.sitkUInt8 )
-	data = sitk.GetArrayFromImage(data)
-
-	return(data)
+    """
+    this function loads .nrrd files into a 3D matrix and outputs it
+    input is the specified file path to the .nrrd file
+    """
+    data = sitk.ReadImage( full_path_filename )
+    data = sitk.Cast( sitk.RescaleIntensity(data), sitk.sitkUInt8 )
+    data = sitk.GetArrayFromImage(data)
+    return(data)
 
 def checkMask(data):
-    ''' data = mask stack depth, width, height
+    """
+    data = mask stack depth, width, height
     tell me if there is only 1 value, 255
     
     each heart has a different mask sizes, of course
-    '''
+    """
     # only 0, 255 ? not so
     five = np.where(data == 255)
     for f in five:
@@ -69,10 +70,13 @@ def checkMask(data):
     zero = np.sum(data)
     return int(five[0].shape[0]) * 255 == zero
 	
-# this function encodes a 2D file into run-length-encoding format (RLE)
-# 	the input is a 2D binary image (1 = positive), the output is a string of the RLE
+
 def run_length_encoding(input_mask):
-	
+	"""
+     this function encodes a 2D file into run-length-encoding format (RLE)
+     the input is a 2D binary image (1 = positive), the output is a string of the RLE
+     """
+    
 	dots = np.where(input_mask.T.flatten()==1)[0]
 	
 	run_lengths,prev = [],-2
@@ -85,12 +89,6 @@ def run_length_encoding(input_mask):
 
 	return(" ".join([str(i) for i in run_lengths]))
 	
-
-
-### a sample script to produce a prediction 
-
-# load the image file and reformat such that its axis are consistent with the MRI
-
 
 if __name__ == '__main__':
     
@@ -116,42 +114,21 @@ if __name__ == '__main__':
                         masks=masks3,
                         images = images2)
     
-    # check input dimension
-#    for mask, image in zip(masks, images):
-#        print ('{} \t {}'.format(mask.shape, image.shape))
-#    # imageJ counts from 1
-#    image = images[0][0,-1,...]
-
-
-
-
-
-
-
-
-
-
-
-
-#
-#
-#
-## *** your code goes here for predicting the mask:
-#
-#mask = np.zeros(image.shape)
-#mask[image>200] = 1 # a very trivial solution is presented
-#
-## ***
-#
-#
-#
-## encode in RLE
-#image_ids = ["ExampleOnlyMRI_slice_"+str(i) for i in range(image.shape[0])]
-#
-#encode_cavity = []
-#for i in range(mask.shape[0]):
-#	encode_cavity.append(run_length_encoding(mask[i,:,:]))
-#
-## output to csv file
-#csv_output = pd.DataFrame(data={"ImageId":image_ids,'EncodeCavity':encode_cavity},columns=['ImageId','EncodeCavity'])
-#csv_output.to_csv("ExampleOnlyLabels.csv",sep=",",index=False)
+    # a prediction example
+    #mask = np.zeros(image.shape)
+    #mask[image>200] = 1 # a very trivial solution is presented
+    #
+    ## ***
+    #
+    #
+    #
+    ## encode in RLE
+    #image_ids = ["ExampleOnlyMRI_slice_"+str(i) for i in range(image.shape[0])]
+    #
+    #encode_cavity = []
+    #for i in range(mask.shape[0]):
+    #	encode_cavity.append(run_length_encoding(mask[i,:,:]))
+    #
+    ## output to csv file
+    #csv_output = pd.DataFrame(data={"ImageId":image_ids,'EncodeCavity':encode_cavity},columns=['ImageId','EncodeCavity'])
+    #csv_output.to_csv("ExampleOnlyLabels.csv",sep=",",index=False)
