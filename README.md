@@ -8,30 +8,22 @@ Please visit the organizer's website (http://stacom2018.cardiacatlas.org/) for t
 
 ### Prerequisites
 
-Pytorch 0.4.0
-Anaconda Python 3.5
-SimpleITK 1.1.0
-CUDA 9.0
-CUDNN 7005
+* **Pytorch 0.4.0
+* **Anaconda Python 3.5
+* **SimpleITK 1.1.0
+* **CUDA 9.0
+* **CUDNN 7005
 
-GPU with Kepler generation of architecture or above
-GPU memory 3GB or above
+* **GPU with Kepler generation of architecture or above
+* **GPU memory 3GB or above
 
 ### Installing
 
-It is recommended to install all the prerequisites.
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+It is recommended to install all the prerequisites and have suitable hardware in place.
 
 ## Authors
 
-* **Wilson Fok** *
+* **Wilson Fok** 
 
 
 ## Acknowledgments
