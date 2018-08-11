@@ -8,14 +8,14 @@ Please visit the organizer's website (http://stacom2018.cardiacatlas.org/) for t
 
 ### Prerequisites
 
-* **Pytorch 0.4.0
-* **Anaconda Python 3.5
-* **SimpleITK 1.1.0
-* **CUDA 9.0
-* **CUDNN 7005
+* Pytorch 0.4.0
+* Anaconda Python 3.5
+* SimpleITK 1.1.0
+* CUDA 9.0
+* CUDNN 7005
 
-* **GPU with Kepler generation of architecture or above
-* **GPU memory 3GB or above
+* GPU with Kepler generation of architecture or above
+* GPU memory 3GB or above
 
 ### Installing
 
