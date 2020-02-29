@@ -6,6 +6,12 @@ The aim of the project is to investigate how to come up with an ensemble of conv
 
 Please visit the organizer's website (http://stacom2018.cardiacatlas.org/) for the raw data, which contain 100 3D late gadolinium-enhanced (LGE)-MRIs with a spatial resolution of 0.625mm x 0.625mm x 0.625mm from patients with atrial fibrillation. 
 
+## Publication
+
+Fok, W, Zhao, J , Fernandez, J
+"Ensemble of convolutional neural networks for heart segmentation"
+International Workshop on Statistical Atlases and Computational Modeling of the Heart, Springer 2018
+
 ### Prerequisites
 
 * Pytorch 0.4.0
