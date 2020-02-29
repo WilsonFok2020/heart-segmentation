@@ -31,9 +31,9 @@ It is recommended to install all the prerequisites and have suitable hardware in
 
 ## Authors
 
-* **Wilson Fok** 
+**Wilson Fok** 
 
 
 ## Acknowledgments
 
-* Big thanks must be given to the organizer of the challenge. 
+Big thanks must be given to the organizer of the challenge. 
